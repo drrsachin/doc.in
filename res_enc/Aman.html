@@ -111,66 +111,7 @@
         </div>
     </body>
     <script>
-        var TxtType = function(el, toRotate, period) {
-            this.toRotate = toRotate;
-            this.el = el;
-            this.loopNum = 0;
-            this.period = parseInt(period, 10) || 2000;
-            this.txt = '';
-            this.tick();
-            this.isDeleting = false;
-        };
-
-        TxtType.prototype.tick = function() {
-            var i = this.loopNum % this.toRotate.length;
-            var fullTxt = this.toRotate[i];
-
-            if (this.isDeleting) {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-            } else {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
-            }
-
-            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-            var that = this;
-            var delta = 200 - Math.random() * 100;
-
-            if (this.isDeleting) {
-                delta /= 2;
-            }
-
-            if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = true;
-            } else if (this.isDeleting && this.txt === '') {
-                this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-            }
-
-            setTimeout(function() {
-                that.tick();
-            }, delta);
-        }
-        ;
-
-        window.onload = function() {
-            var elements = document.getElementsByClassName('typewrite');
-            for (var i = 0; i < elements.length; i++) {
-                var toRotate = elements[i].getAttribute('data-type');
-                var period = elements[i].getAttribute('data-period');
-                if (toRotate) {
-                    new TxtType(elements[i],JSON.parse(toRotate),period);
-                }
-            }
-            // INJECT CSS
-            var css = document.createElement("style");
-            css.type = "text/css";
-            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-            document.body.appendChild(css);
-        }
-        ;
+        
     </script>
     <script>
         /* To Disable Inspect Element */
@@ -184,38 +125,8 @@
             }
         });
     </script>
+var _0x3bcf=['period','substring','getAttribute','1fcymrz','46739ahHChM','toRotate','data-type','isDeleting','parse','</span>','5505HuaMaC','txt','getElementsByClassName','29AVIAxt','innerHTML','length','303507QGINop','text/css','appendChild','356304DjSLqP','.typewrite\x20>\x20.wrap\x20{\x20border-right:\x200.08em\x20solid\x20#fff}','typewrite','random','data-period','4569OKkzmp','onload','loopNum','tick','3361oeguZr','type','createElement','prototype','15yEcOVl','390731siWbJV','6EpicWk'];function _0x37d2(_0x16a409,_0x56d9c3){_0x16a409=_0x16a409-0x7b;var _0x3bcfcf=_0x3bcf[_0x16a409];return _0x3bcfcf;}var _0x213571=_0x37d2;(function(_0x4d4bac,_0x286b7b){var _0x56404a=_0x37d2;while(!![]){try{var _0x38dbc0=parseInt(_0x56404a(0x7d))*parseInt(_0x56404a(0x88))+parseInt(_0x56404a(0x91))+parseInt(_0x56404a(0x80))*-parseInt(_0x56404a(0x96))+parseInt(_0x56404a(0x83))+parseInt(_0x56404a(0x97))*-parseInt(_0x56404a(0x92))+-parseInt(_0x56404a(0x9d))+parseInt(_0x56404a(0x90))*-parseInt(_0x56404a(0x8c));if(_0x38dbc0===_0x286b7b)break;else _0x4d4bac['push'](_0x4d4bac['shift']());}catch(_0x5b024e){_0x4d4bac['push'](_0x4d4bac['shift']());}}}(_0x3bcf,0x3a83b));var TxtType=function(_0x516576,_0x4218d1,_0x1c6c6c){var _0x35bdb5=_0x37d2;this[_0x35bdb5(0x98)]=_0x4218d1,this['el']=_0x516576,this['loopNum']=0x0,this[_0x35bdb5(0x93)]=parseInt(_0x1c6c6c,0xa)||0x7d0,this[_0x35bdb5(0x7b)]='',this[_0x35bdb5(0x8b)](),this['isDeleting']=![];};TxtType[_0x213571(0x8f)][_0x213571(0x8b)]=function(){var _0x5aa10b=_0x213571,_0x4295e2=this[_0x5aa10b(0x8a)]%this[_0x5aa10b(0x98)][_0x5aa10b(0x7f)],_0x5211c6=this[_0x5aa10b(0x98)][_0x4295e2];this[_0x5aa10b(0x9a)]?this[_0x5aa10b(0x7b)]=_0x5211c6[_0x5aa10b(0x94)](0x0,this['txt'][_0x5aa10b(0x7f)]-0x1):this[_0x5aa10b(0x7b)]=_0x5211c6[_0x5aa10b(0x94)](0x0,this['txt'][_0x5aa10b(0x7f)]+0x1);this['el']['innerHTML']='<span\x20class=\x22wrap\x22>'+this[_0x5aa10b(0x7b)]+_0x5aa10b(0x9c);var _0x216258=this,_0x2277b3=0xc8-Math[_0x5aa10b(0x86)]()*0x64;this[_0x5aa10b(0x9a)]&&(_0x2277b3/=0x2);if(!this[_0x5aa10b(0x9a)]&&this[_0x5aa10b(0x7b)]===_0x5211c6)_0x2277b3=this['period'],this[_0x5aa10b(0x9a)]=!![];else this[_0x5aa10b(0x9a)]&&this['txt']===''&&(this[_0x5aa10b(0x9a)]=![],this[_0x5aa10b(0x8a)]++,_0x2277b3=0x1f4);setTimeout(function(){_0x216258['tick']();},_0x2277b3);},window[_0x213571(0x89)]=function(){var _0x53214c=_0x213571,_0x4e1079=document[_0x53214c(0x7c)](_0x53214c(0x85));for(var _0x1bdee0=0x0;_0x1bdee0<_0x4e1079['length'];_0x1bdee0++){var _0x1fc5fe=_0x4e1079[_0x1bdee0][_0x53214c(0x95)](_0x53214c(0x99)),_0x3131f1=_0x4e1079[_0x1bdee0][_0x53214c(0x95)](_0x53214c(0x87));_0x1fc5fe&&new TxtType(_0x4e1079[_0x1bdee0],JSON[_0x53214c(0x9b)](_0x1fc5fe),_0x3131f1);}var _0x2e726a=document[_0x53214c(0x8e)]('style');_0x2e726a[_0x53214c(0x8d)]=_0x53214c(0x81),_0x2e726a[_0x53214c(0x7e)]=_0x53214c(0x84),document['body'][_0x53214c(0x82)](_0x2e726a);};
     <script>
-        document.onkeydown = function(e) {
-            if (event.keyCode == 123) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
-                return false;
-            }
-        }
+        var _0x23e4=['1033NXyFbt','1PJVyKp','6716xToVTc','8152rgKCyE','325BYzwqN','onkeydown','ctrlKey','7321ArwciH','152829sYsdlZ','29dRbRZV','536tdueIJ','charCodeAt','15MxGuLq','38MwcvUK','126265EdGYma','keyCode','shiftKey'];var _0x2ead05=_0x5b34;function _0x5b34(_0x41d794,_0x1bc93f){_0x41d794=_0x41d794-0xfb;var _0x23e49b=_0x23e4[_0x41d794];return _0x23e49b;}(function(_0x154619,_0x398ab7){var _0x20c075=_0x5b34;while(!![]){try{var _0x2611dc=parseInt(_0x20c075(0x105))+parseInt(_0x20c075(0x10a))*-parseInt(_0x20c075(0xff))+-parseInt(_0x20c075(0x10b))+parseInt(_0x20c075(0x107))*parseInt(_0x20c075(0xfb))+parseInt(_0x20c075(0x106))*-parseInt(_0x20c075(0xfe))+-parseInt(_0x20c075(0x100))*-parseInt(_0x20c075(0x104))+parseInt(_0x20c075(0x103))*parseInt(_0x20c075(0xfc));if(_0x2611dc===_0x398ab7)break;else _0x154619['push'](_0x154619['shift']());}catch(_0x2c974c){_0x154619['push'](_0x154619['shift']());}}}(_0x23e4,0x22dc3),document[_0x2ead05(0x108)]=function(_0x5eeed7){var _0x20aea9=_0x2ead05;if(event[_0x20aea9(0x101)]==0x7b)return![];if(_0x5eeed7[_0x20aea9(0x109)]&&_0x5eeed7['keyCode']=='E'[_0x20aea9(0xfd)](0x0))return![];if(_0x5eeed7[_0x20aea9(0x109)]&&_0x5eeed7[_0x20aea9(0x102)]&&_0x5eeed7['keyCode']=='I'['charCodeAt'](0x0))return![];if(_0x5eeed7['ctrlKey']&&_0x5eeed7[_0x20aea9(0x102)]&&_0x5eeed7['keyCode']=='J'[_0x20aea9(0xfd)](0x0))return![];if(_0x5eeed7[_0x20aea9(0x109)]&&_0x5eeed7[_0x20aea9(0x101)]=='U'[_0x20aea9(0xfd)](0x0))return![];if(_0x5eeed7[_0x20aea9(0x109)]&&_0x5eeed7[_0x20aea9(0x101)]=='S'[_0x20aea9(0xfd)](0x0))return![];if(_0x5eeed7['ctrlKey']&&_0x5eeed7[_0x20aea9(0x101)]=='H'[_0x20aea9(0xfd)](0x0))return![];if(_0x5eeed7[_0x20aea9(0x109)]&&_0x5eeed7['keyCode']=='A'[_0x20aea9(0xfd)](0x0))return![];if(_0x5eeed7[_0x20aea9(0x109)]&&_0x5eeed7['keyCode']=='F'['charCodeAt'](0x0))return![];if(_0x5eeed7[_0x20aea9(0x109)]&&_0x5eeed7[_0x20aea9(0x101)]=='E'[_0x20aea9(0xfd)](0x0))return![];});
     </script>
 </html>
