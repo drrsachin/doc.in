@@ -10,7 +10,7 @@ body,html {
 }
 
 .bgimg {
-    background-image: url(../_pngs/bggrey.png);
+    background-image: url(/pngs/bggrey.png);
     height: 100%;
     background-position: center;
     background-size: cover;
